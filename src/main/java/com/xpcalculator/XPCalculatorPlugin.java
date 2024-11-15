@@ -1,4 +1,4 @@
-package com.example;
+package com.xpcalculator;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
@@ -14,26 +14,26 @@ import net.runelite.client.plugins.PluginDescriptor;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Example"
+	name = "XP Calculator"
 )
-public class ExamplePlugin extends Plugin
+public class XPCalculatorPlugin extends Plugin
 {
 	@Inject
 	private Client client;
 
 	@Inject
-	private ExampleConfig config;
+	private XPCalculatorConfig config;
 
 	@Override
 	protected void startUp() throws Exception
 	{
-		log.info("Example started!");
+		log.info("XP Calculator started!");
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
-		log.info("Example stopped!");
+		log.info("XP Calculator stopped!");
 	}
 
 	@Subscribe
@@ -46,8 +46,8 @@ public class ExamplePlugin extends Plugin
 	}
 
 	@Provides
-	ExampleConfig provideConfig(ConfigManager configManager)
+	XPCalculatorConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(ExampleConfig.class);
+		return configManager.getConfig(XPCalculatorConfig.class);
 	}
 }
